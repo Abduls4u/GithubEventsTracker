@@ -22,7 +22,6 @@ def fetch_github_events(username):
             created_at = event.get('created_at', 'Unknown Time')
             print(f"{i}. [{event_type}] on [{repo_name}] at [{created_at}]")
 
-
     except requests.exceptions.HTTPError as error:
         if error == 404:
             print(f"No user named {username}")
@@ -40,7 +39,6 @@ def main():
         print('Usage: python3 githubActivity.py <user_name>')
     else:
         fetch_github_events(sys.argv[1])
-
 
 
 if __name__ == "__main__":
